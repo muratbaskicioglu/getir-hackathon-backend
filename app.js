@@ -17,7 +17,7 @@ database(config.mongodb.connectionString).then((db) => {
 	app.get('/getRecord', (req, res) => res.json({ error: true, reason: "GET method is not allowed! Use POST method." }));
 
 	app.post('/getRecord', (req, res) => {
-		const key = req.body.key ? Promise.resolve(req.body.key) : Promise.reject(new Error('No key given!'));
+		const key = req.body.key && req.body.key.constructor === String ? Promise.resolve(req.body.key) : Promise.reject(new Error('No key given!'));
 		key.then(key => options.getRecord(key))
 			.then((results) => res.json(results || { error: true, reason: "Not found!" }))
 			.catch((err) => res.json({ error: true, reason: err.message }));
