@@ -1,0 +1,22 @@
+{
+	"name": "getir-hackathon-backend",
+	"version": "1.0.0",
+	"description": "For the Getir - BiTaksi Hackathon backend task.",
+	"author": "Murat Baskýcýoðlu",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/muratbaskicioglu/getir-hackathon-backend.git"
+	},
+	"engines": {
+		"node": "6.10.0"
+	},
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js"
+	},
+	"dependencies": {
+		"body-parser": "^1.16.1",
+		"express": "^4.14.1",
+		"mongodb": "^2.2.24"
+	}
+}
