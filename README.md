@@ -1,2 +1,2 @@
 # getir-hackathon-backend
-For the Getir - BiTaksi Hackathon backend task.
+This application is coded for Getir - BiTaksi Hackathon backend task by Murat Baskıcıoğlu.
