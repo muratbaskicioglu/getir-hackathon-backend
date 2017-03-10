@@ -18,8 +18,9 @@ database(config.mongodb.connectionString).then((db) => {
 
 	app.post('/getRecord', (req, res) => {
 		const key = req.body.key ? Promise.resolve(req.body.key) : Promise.reject(new Error('No key given!'));
-		key.then(key => options.getRecord(key)).then((results) => res.json(results || { error: true, reason: "Not found!" }))
-						       .catch((err) => res.json({ error: true, reason: err.message }));
+		key.then(key => options.getRecord(key))
+			.then((results) => res.json(results || { error: true, reason: "Not found!" }))
+			.catch((err) => res.json({ error: true, reason: err.message }));
 		});
 	});
 	
