@@ -21,7 +21,6 @@ database(config.mongodb.connectionString).then((db) => {
 		key.then(key => options.getRecord(key))
 			.then((results) => res.json(results || { error: true, reason: "Not found!" }))
 			.catch((err) => res.json({ error: true, reason: err.message }));
-		});
 	});
 	
 	return app.listen(config.port);
